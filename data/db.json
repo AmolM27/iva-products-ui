@@ -1,0 +1,48 @@
+{
+"products":
+    [
+        {
+        "id": 1,
+        "name": "Gold Necklace",
+        "price": 250,
+        "image": "gold-necklace.jpg",
+        "description": "A beautiful handcrafted gold necklace with intricate detailing."
+        },
+        {
+        "id": 2,
+        "name": "Diamond Ring",
+        "price": 500,
+        "image": "diamond-ring.jpg",
+        "description": "An elegant diamond ring with a brilliant-cut solitaire."
+        },
+        {
+        "id": 3,
+        "name": "Silver Bracelet 2",
+        "price": 150,
+        "image": "silver-bracelet.jpg",
+        "description": "A stylish sterling silver bracelet perfect for any occasion."
+        },
+        {
+        "id": 4,
+        "name": "Gold Necklace 2",
+        "price": 250,
+        "image": "gold-necklace.jpg",
+        "description": "A beautiful handcrafted gold necklace with intricate detailing."
+        },
+        {
+        "id": 5,
+        "name": "Diamond Ring 2",
+        "price": 500,
+        "image": "diamond-ring.jpg",
+        "description": "An elegant diamond ring with a brilliant-cut solitaire."
+        },
+        {
+        "id": 6,
+        "name": "Silver Bracelet 2",
+        "price": 150,
+        "image": "silver-bracelet.jpg",
+        "description": "A stylish sterling silver bracelet perfect for any occasion."
+        }
+    ]
+}
+  
