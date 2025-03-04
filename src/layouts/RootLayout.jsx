@@ -1,17 +1,14 @@
-import { NavLink, Outlet } from "react-router-dom";
-import Navbar from "../Navbar"; 
+import React from 'react';
+import Navbar from '../Navbar'; // Ensure this path is correct
+import { Outlet } from 'react-router-dom';
 
 const RootLayout = () => {
-    return ( 
-        <div className="root-layout">
-            <header>
-                <Navbar/>
-            </header>
-            <main>
-                <Outlet/>
-            </main>
-        </div>
-     );
-}
- 
+    return (
+        <>
+            <Navbar />
+            <Outlet /> {/* Renders the matched child route */}
+        </>
+    );
+};
+
 export default RootLayout;
