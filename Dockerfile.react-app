@@ -1,0 +1,35 @@
+# Build Stage
+FROM node:18-alpine AS build
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json for dependency installation
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application files
+COPY . .
+
+# Build the Vite app (outputs to `dist/`)
+RUN npm run build
+
+# Debugging: Ensure the dist directory exists
+RUN ls -la dist
+
+# Serve Stage
+FROM nginx:alpine
+
+# Ensure the target directory exists
+RUN mkdir -p /usr/share/nginx/html
+
+# Copy build files from `dist/` instead of `build/`
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Expose port 80 for serving the app
+EXPOSE 80
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]

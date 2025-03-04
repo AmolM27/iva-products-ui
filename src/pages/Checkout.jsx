@@ -1,9 +1,8 @@
-// Checkout.js
 import React from "react";
 import { useCart } from "./CartContext"; // Import useCart
 
 const Checkout = () => {
-    const { cart } = useCart(); // Access the cart from context
+    const { cart, removeFromCart, decreaseQuantity } = useCart(); // Access cart functions
 
     return (
         <div className="checkout-container">
@@ -12,7 +11,13 @@ const Checkout = () => {
                 <ul>
                     {cart.map(item => (
                         <li key={item.id}>
-                            {item.name} - {item.quantity} x {item.price}
+                            {item.name} - {item.quantity} x ${item.price}
+                            <button onClick={() => decreaseQuantity(item.id)} className="decrease-button">
+                                -
+                            </button>
+                            <button onClick={() => removeFromCart(item.id)} className="remove-button">
+                                Remove
+                            </button>
                         </li>
                     ))}
                 </ul>

@@ -1,0 +1,18 @@
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.react-app  # Reference React app Dockerfile
+    ports:
+      - "3000:80"
+    restart: always
+
+  json-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.json-server  # Reference json-server Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
+    restart: always

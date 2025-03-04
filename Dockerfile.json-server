@@ -1,0 +1,20 @@
+# Use Node.js image for json-server
+FROM node:18-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the package.json and package-lock.json to install dependencies
+COPY package.json package-lock.json ./
+
+# Install json-server globally
+RUN npm install -g json-server
+
+# Copy the db.json file from the local data directory to /data/ in the container
+COPY data/db.json /data/db.json
+
+# Expose the port for json-server
+EXPOSE 8000
+
+# Start json-server with watch on db.json
+CMD ["json-server", "--watch", "/data/db.json", "--port", "8000"]
